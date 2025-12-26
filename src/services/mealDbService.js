@@ -10,10 +10,6 @@ async function fetchJson(url) {
 
 export async function searchMealsByName(query) {
   const trimmed = query.trim();
-  if (!trimmed) {
-    return { meals: [] };
-  }
-
   const url = `${BASE_URL}/search.php?s=${encodeURIComponent(trimmed)}`;
   const data = await fetchJson(url);
   return { meals: data.meals ?? [] };

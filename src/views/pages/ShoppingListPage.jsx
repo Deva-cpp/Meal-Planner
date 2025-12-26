@@ -31,20 +31,20 @@ export function ShoppingListPage({
 
   return (
     <div className="ui-page space-y-6">
-      <section className="rounded-3xl border border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.75)] p-6 sm:p-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-start gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-2xl bg-white/70 ring-1 ring-[color:var(--ui-border)]">
-              <BagIcon className="h-6 w-6 text-[color:var(--ui-primary)]" />
+      <section className="rounded-3xl border border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.75)] p-4 sm:p-6 md:p-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <div className="flex items-start gap-2 sm:gap-3">
+            <div className="grid h-9 w-9 place-items-center rounded-2xl bg-white/70 ring-1 ring-[color:var(--ui-border)] sm:h-11 sm:w-11">
+              <BagIcon className="h-5 w-5 text-[color:var(--ui-primary)] sm:h-6 sm:w-6" />
             </div>
             <div>
-              <h1 className="text-2xl font-semibold tracking-tight text-[color:var(--ui-text)]">
+              <h1 className="text-xl font-semibold tracking-tight text-[color:var(--ui-text)] sm:text-2xl">
                 Shopping List
               </h1>
-              <p className="mt-2 text-sm leading-6 text-[color:var(--ui-text-muted)]">
+              <p className="mt-1 text-xs leading-5 text-[color:var(--ui-text-muted)] sm:mt-2 sm:text-sm sm:leading-6">
                 Consolidated ingredients from your planned meals.
               </p>
-              <div className="mt-2 text-sm text-[color:var(--ui-text-muted)]">
+              <div className="mt-1.5 text-xs text-[color:var(--ui-text-muted)] sm:mt-2 sm:text-sm">
                 Planned meals: {plannedMealsCount}
               </div>
             </div>
@@ -57,10 +57,11 @@ export function ShoppingListPage({
                   generateShoppingListFromMealPlan(mealPlan, shoppingItems)
                 )
               }
+              className="w-full sm:w-auto"
             >
               Generate from Plan
             </Button>
-            <Button variant="ghost" onClick={handleClear}>
+            <Button variant="ghost" onClick={handleClear} className="w-full sm:w-auto">
               {confirmClear ? "Confirm clear" : "Clear"}
             </Button>
           </div>

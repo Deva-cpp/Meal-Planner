@@ -92,14 +92,14 @@ export function RecipeDetailPage({ onAddToMealPlan }) {
 
   return (
     <div className="ui-page-slide-in pb-40 md:pb-10">
-      <div className="sticky top-16 z-10 -mx-4 border-b border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.80)] px-4 py-3 shadow-sm backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3">
-          <Button variant="ghost" onClick={() => navigate(-1)}>
+      <div className="sticky top-20 mb-6 z-10 -mx-4 border-b border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.80)] px-3 py-2 shadow-sm backdrop-blur sm:px-4 sm:py-3">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 sm:gap-3">
+          <Button variant="ghost" onClick={() => navigate(-1)} className="text-sm sm:text-base">
             <BackIcon className="h-4 w-4" />
-            Back
+            <span className="hidden xs:inline">Back</span>
           </Button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {justAdded ? (
               <div className="hidden text-sm font-semibold text-[color:var(--ui-primary)] sm:block">
                 <span className="inline-flex items-center gap-2">
@@ -111,7 +111,7 @@ export function RecipeDetailPage({ onAddToMealPlan }) {
             <select
               value={day}
               onChange={(e) => setDay(e.target.value)}
-              className="h-12 rounded-xl border border-[color:var(--ui-border)] bg-white/80 px-3 text-base text-[color:var(--ui-text)] outline-none focus:border-[color:var(--ui-primary)]"
+              className="h-9 rounded-xl border border-[color:var(--ui-border)] bg-white/80 px-2 text-xs text-[color:var(--ui-text)] outline-none focus:border-[color:var(--ui-primary)] sm:h-12 sm:px-3 sm:text-base"
             >
               {days.map((d) => (
                 <option key={d} value={d} className="bg-white">
@@ -119,9 +119,9 @@ export function RecipeDetailPage({ onAddToMealPlan }) {
                 </option>
               ))}
             </select>
-            <Button onClick={handleAdd}>
+            <Button onClick={handleAdd} className="text-xs sm:text-sm">
               <PlusIcon className="h-4 w-4" />
-              Add to Meal Plan
+              <span className="hidden xs:inline">Add to Plan</span>
             </Button>
           </div>
         </div>
@@ -296,25 +296,7 @@ export function RecipeDetailPage({ onAddToMealPlan }) {
         </section>
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 z-20 border-t border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.85)] p-3 backdrop-blur sm:p-4 md:hidden">
-        <div className="mx-auto flex w-full max-w-6xl items-center gap-2">
-          <select
-            value={day}
-            onChange={(e) => setDay(e.target.value)}
-            className="h-12 flex-1 rounded-xl border border-[color:var(--ui-border)] bg-white/80 px-3 text-base text-[color:var(--ui-text)] outline-none"
-          >
-            {days.map((d) => (
-              <option key={d} value={d} className="bg-white">
-                {d}
-              </option>
-            ))}
-          </select>
-          <Button className="h-11" onClick={handleAdd}>
-            <PlusIcon className="h-4 w-4" />
-            Add
-          </Button>
-        </div>
-      </div>
+
     </div>
   );
 }

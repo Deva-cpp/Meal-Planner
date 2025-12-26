@@ -14,13 +14,13 @@ export function MealPlannerPage({
 
   return (
     <div className="ui-page space-y-6">
-      <section className="rounded-3xl border border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.75)] p-6 sm:p-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <section className="rounded-3xl border border-[color:var(--ui-border)] bg-[color:rgba(255,255,255,0.75)] p-4 sm:p-6 md:p-8">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight text-[color:var(--ui-text)]">
+            <h1 className="text-xl font-semibold tracking-tight text-[color:var(--ui-text)] sm:text-2xl">
               Weekly Meal Planner
             </h1>
-            <p className="mt-2 text-sm leading-6 text-[color:var(--ui-text-muted)]">
+            <p className="mt-1.5 text-xs leading-5 text-[color:var(--ui-text-muted)] sm:mt-2 sm:text-sm sm:leading-6">
               Plan Monday–Sunday. Add multiple meals per day, then generate a
               shopping list.
             </p>
@@ -28,13 +28,13 @@ export function MealPlannerPage({
           <button
             type="button"
             onClick={onClearAll}
-            className="rounded-xl border border-[color:var(--ui-border)] bg-white/70 px-4 py-2 text-sm font-semibold text-[color:var(--ui-text)] hover:bg-white"
+            className="w-full rounded-xl border border-[color:var(--ui-border)] bg-white/70 px-4 py-2 text-sm font-semibold text-[color:var(--ui-text)] hover:bg-white sm:w-auto"
           >
             Clear All
           </button>
         </div>
 
-        <div className="mt-4 text-sm text-[color:var(--ui-text-muted)]">
+        <div className="mt-3 text-xs text-[color:var(--ui-text-muted)] sm:mt-4 sm:text-sm">
           Planned meals: {totalMeals}
         </div>
       </section>
